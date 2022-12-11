@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.szx.mapper.UserMapper">
+
+    <insert id="add">
+        insert into user values (#{id},#{name},#{age},#{email})
+    </insert>
+
+    <delete id="delete">
+        delete from user where id = #{id}
+    </delete>
+
+    <update id="update">
+        update user set name = #{name},age = #{age},email = #{email} where id = #{id}
+    </update>
+
+    <select id="queryAll" resultType="User">
+        select id,name,age,email from user
+    </select>
+
+</mapper>
